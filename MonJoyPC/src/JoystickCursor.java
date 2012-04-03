@@ -38,20 +38,20 @@ public class JoystickCursor {
     		}
     		
     		int x = stream.readInt();
-    		if (x < -5) {
-    			cursorX -= Math.pow(((double)x + 5)/90, 2);
+    		if (x < -2) {
+    			cursorX -= Math.pow(((double)x + 2)/90, 2);
     			if (cursorX < 0) cursorX = 0;
-    		} else if (x > 5) {
-    			cursorX += Math.pow(((double)x + 5)/90, 2);
+    		} else if (x > 2) {
+    			cursorX += Math.pow(((double)x + 2)/90, 2);
     			if (cursorX > Toolkit.getDefaultToolkit().getScreenSize().width) cursorX = Toolkit.getDefaultToolkit().getScreenSize().width;
     		}
     		
     		int y = stream.readInt();
-    		if (y < -5) {
-    			cursorY -= Math.pow(((double)y + 5)/90, 2);
+    		if (y < -2) {
+    			cursorY -= Math.pow(((double)y + 2)/90, 2);
     			if (cursorY < 0) cursorY = 0;
-    		} else if (y > 5) {
-    			cursorY += Math.pow(((double)y + 5)/90, 2);
+    		} else if (y > 2) {
+    			cursorY += Math.pow(((double)y + 2)/90, 2);
     			if (cursorY > Toolkit.getDefaultToolkit().getScreenSize().height) cursorY = Toolkit.getDefaultToolkit().getScreenSize().height;
     		}
     		
