@@ -3,16 +3,14 @@ import java.io.IOException;
 
 import lejos.nxt.Button;
 import lejos.nxt.Motor;
-import lejos.nxt.NXTMotor;
 import lejos.nxt.NXTRegulatedMotor;
 import lejos.nxt.SensorPort;
 import lejos.nxt.Sound;
-import lejos.nxt.TachoMotorPort;
 import lejos.nxt.TouchSensor;
 import lejos.nxt.comm.Bluetooth;
 import lejos.nxt.comm.NXTConnection;
 
-public class JoystickCursor {
+public class Joystick {
     public static void main (String[] args) throws InterruptedException {
     	System.out.println("LOLCODE");
     	Sound.playTone(400, 100);
@@ -38,7 +36,7 @@ public class JoystickCursor {
     	motorY.flt();
 		motorC.setSpeed(100);
     	
-    	boolean colorFloating = false;
+    	//boolean colorFloating = false;
     	boolean colorMoving = false;
     	int lastTaco = 0;
     	int sameFor = 0;
@@ -54,7 +52,7 @@ public class JoystickCursor {
             	} else if (!colorMoving) {
             		if (motorC.getTachoCount() == lastTaco && sameFor == 15) {
             			Sound.beep();
-            			colorFloating = false;
+            			//colorFloating = false;
             			colorMoving = true;
                 		sameFor = 0;
             			motorC.rotate(-offset);
@@ -64,7 +62,7 @@ public class JoystickCursor {
             		} else if (lastTaco == motorC.getTachoCount()) {
             			sameFor += 1;
             		} else {
-                		colorFloating = true;
+                		//colorFloating = true;
                 		lastTaco = motorC.getTachoCount();
                 		sameFor = 0;
             		}
