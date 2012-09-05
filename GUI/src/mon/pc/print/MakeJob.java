@@ -167,7 +167,7 @@ class PrintGUI extends JPanel implements ActionListener, ChangeListener {
     }
     
     public void processImage() {
-    	printImg = new BufferedImage(inputImg.getWidth()/4, inputImg.getHeight()/6, BufferedImage.TYPE_INT_RGB);
+    	printImg = new BufferedImage(inputImg.getWidth()/1, inputImg.getHeight()/1, BufferedImage.TYPE_INT_RGB);
     	
     	job = new SimpleBitmapJob(3);
     	Stroke stroke;
@@ -176,7 +176,7 @@ class PrintGUI extends JPanel implements ActionListener, ChangeListener {
         	stroke = null;
         	
         	for (int x = 0; x < printImg.getWidth(); x++) {
-        		int rgb = inputImg.getRGB(x*4, y*6);
+        		int rgb = inputImg.getRGB(x*1, y*1);
         		int marker;
         		double[] hsl = ImageUtils.rgbToHsl(rgb);
         		
